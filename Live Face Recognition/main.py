@@ -10,7 +10,8 @@ cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
 counter = 0
 
-reference_img = cv2.imread("reference.jpg")  # use your own image here
+reference_img = cv2.imread("reference.jpg")  # use your own image here. Copy the path and duplicate every backwards slash.
+
 
 face_match = False
 
