@@ -11,7 +11,7 @@ cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 counter = 0
 
 reference_img = cv2.imread("reference.jpg")  # use your own image here. Copy the path and duplicate every backwards slash.
-
+reference_img2 = cv2.imread("reference2.jpg") # You can add as many images as you want. However it will only recognize faces.
 
 face_match = False
 
@@ -19,7 +19,7 @@ face_match = False
 def check_face(frame):
     global face_match
     try:
-        if DeepFace.verify(frame, reference_img.copy())['verified']:
+        if DeepFace.verify(frame, reference_img.copy())['verified'] or DeepFace.verify(frame, reference_img2.copy())['verified']:
             face_match = True
         else:
             face_match = False
